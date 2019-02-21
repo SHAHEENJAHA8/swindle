@@ -1,0 +1,377 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>SWINDLE DETECTION</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Bootstrap css -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+    <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.theme.default.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/modal-video/css/modal-video.min.css' %}" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
+
+    <style>
+
+        .files input {
+            background-color: mintcream;
+            border: 2px solid grey;
+            border-radius: 25px;
+            -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+            transition: outline-offset .15s ease-in-out, background-color .15s linear;
+            padding: 120px 0px 85px 35%;
+            text-align: center !important;
+            margin: 0;
+            width: 100% !important;
+        }
+.files input:focus{  
+    outline: 2px dashed #92b0b3;  outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear; 
+    border:1px solid #92b0b3;
+    }
+.files{ position:relative}
+         
+.files:after {  pointer-events: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 50px;
+    right: 0;
+    height: 56px;
+    content: "";
+    background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+    display: block;
+    margin: 0 auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.files:before {
+    position: absolute;
+    bottom: 10px;
+    left: 0;  pointer-events: none;
+    width: 100%;
+    right: 0;
+    height: 57px;
+    content: " or drag it here. ";
+    display: block;
+    margin: 0 auto;
+    color: #2ea591;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+}
+        
+        #upload{
+            background-color: green;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+        }
+         
+        .mat {
+            padding: 40px;
+        } 
+        
+        
+        .matb1 {
+            background-color: crimson;
+            color: white;
+        }
+        
+        .matb3, .matb2, .matb4 {
+           background-color: lightgrey;
+            color: lightslategray;
+        }
+        
+  
+        .btn{
+            background-color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header id="header" class="header header-hide">
+        <div class="container">
+
+            <div id="logo" class="pull-left">
+                <h1><a href="{% url 'home' %}" class="scrollto"><span>SWINDLE </span>SYSTEM</a></h1>
+
+            </div>
+
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+
+                </ul>
+            </nav><!-- #nav-menu-container -->
+        </div>
+    </header><!-- #header -->
+
+    <!--==========================
+    Hero Section
+  ============================-->
+    <section id="hero" class="wow fadeIn">
+        <div class="hero-container">
+            <h1>Welcome to Swindle System</h1>
+            <h2>Elegant System &amp; more...</h2>
+            <img src="{% static 'img/hero-img.png' %}" alt="Hero Imgs">
+            <a href="#get-started" class="btn-get-started scrollto">Get Started</a>
+
+        </div>
+    </section><!-- #hero -->
+    <br>
+    <br>
+
+
+    <!--==========================
+    Get Started Section
+  ============================-->
+    <section id="get-started" class="padd-section text-center wow fadeInUp">
+
+
+        <div class="container">
+            <div class="row">
+                <div class="card col-md-6" style="margin: : 0px;">
+                    <div class="card-body">
+                        <form method="post" enctype="multipart/form-data">
+                            <div class="form-group files">
+                                <h3 class="card-title">Upload Your Data </h3>
+                                {% csrf_token %}
+                                <input type="file" name="myfile" accept=".csv" required />
+                                <button type="submit">Upload</button>
+
+                            </div>
+                        </form>
+                        {% if uploaded_file_url %}
+                        <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="card col-md-5" style="margin: 0px;">
+                    <div class="card-body">
+                        <h4 class="card-title">Terms &amp; Conditions :</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <!--========================== Techniques 
+  ============================-->
+    <section id="pricing" class="padd-section text-center wow fadeInUp">
+
+        <div class="container">
+            <div class="section-title text-center">
+
+                <h2>Training Techniques</h2>
+                <p class="separator">Integer cursus bibendum augue ac cursus .</p>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="block-pricing">
+                        <div class="table">
+                            <h4>DECISION TREE</h4>
+                            <h2></h2>
+                            <div class="table_btn"><i>
+                                    <a href="{% url 'preloader' %}" target="_blank"><input type="submit" class="btn" name="samplebutton" value="Start Training"></a></i>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li><b></b> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="block-pricing">
+                        <div class="table">
+                            <h4>RANDOM FOREST</h4>
+                            <h2></h2>
+                            <div class="table_btn">
+                                <a href="{% url 'pre1' %}" target="_blank"><input type="submit" class="btn" name="samplebutton" value="Start Training"></a>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li><b></b></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="block-pricing">
+                        <div class="table">
+                            <h4>DEEP LEARNING</h4>
+                            <h2></h2>
+
+                            <div class="table_btn">
+                                 <a href="{% url 'loader2' %}" target="_blank">
+                                     <input type="submit" class="btn" name="samplebutton" value="Start Training"> </a></div>
+                            <ul class="list-unstyled">
+                                <li><b></b> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="block-pricing">
+                        <div class="table">
+                            <h4>SMOTE</h4>
+                            <h2></h2>
+                            <div class="table_btn">
+                                <i>
+                                    <a href="{% url 'preload3' %}">
+                                        <input type="submit" class="btn" name="samplebutton" value="Start Training" onclick='location.href="{url startSampling}"'> </a></i> </div>
+                            <ul class="list-unstyled">
+                                <li><b></b></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!--==========================
+            Features
+  ============================-->
+    <section class="padd-section text-center wow fadeInUp">
+
+        <div class="container">
+            <div class="section-title text-center">
+
+                <h2>simple system </h2>
+                <p class="separator">Integer cursus bibendum augue ac cursus .</p>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-block">
+
+                        <img src="{% static 'img/svg/cloud.svg' %}" alt="img" class="img-fluid">
+                        <h4>introducing </h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        <a href="#">read more</a>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-block">
+
+                        <img src="{% static 'img/svg/planet.svg' %}" alt="img" class="img-fluid">
+                        <h4>user friendly interface</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        <a href="#">read more</a>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-block">
+
+                        <img src="{% static 'img/svg/asteroid.svg' %}" alt="img" class="img-fluid">
+                        <h4>Free to use </h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        <a href="#">read more</a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+    <!--==========================
+    Footer
+  ============================-->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+
+        <div class="copyrights">
+            <div class="container">
+                <p>&copy; Copyrights Swindle. All rights reserved.</p>
+                <div class="credits">
+
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
+    <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'lib/superfish/hoverIntent.js' %}"></script>
+    <script src="{% static 'lib/superfish/superfish.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/modal-video/js/modal-video.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/wow/wow.min.js"></script>
+    <!-- Template Main Javascript File -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+
+</body>
+
+</html>

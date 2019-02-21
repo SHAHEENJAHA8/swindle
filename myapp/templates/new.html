@@ -1,0 +1,305 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,700|Philosopher:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Bootstrap css -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+    <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.theme.default.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/modal-video/css/modal-video.min.css' %}" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
+    <style>
+        .files input {
+            outline: 2px dashed #92b0b3;
+            outline-offset: -10px;
+            -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+            transition: outline-offset .15s ease-in-out, background-color .15s linear;
+            padding: 120px 0px 85px 35%;
+            text-align: center !important;
+            margin: 0;
+            width: 100% !important;
+        }
+
+        .files input:focus {
+            outline: 2px dashed #92b0b3;
+            outline-offset: -10px;
+            -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+            transition: outline-offset .15s ease-in-out, background-color .15s linear;
+            border: 1px solid #92b0b3;
+        }
+
+        .files {
+            position: relative
+        }
+
+        .files:after {
+            pointer-events: none;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 50px;
+            right: 0;
+            height: 56px;
+            content: "";
+            background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+            display: block;
+            margin: 0 auto;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        .files:before {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            pointer-events: none;
+            width: 100%;
+            right: 0;
+            height: 57px;
+            content: " or drag it here. ";
+            display: block;
+            margin: 0 auto;
+            color: #2ea591;
+            font-weight: 600;
+            text-transform: capitalize;
+            text-align: center;
+        }
+
+        .mat {
+            padding: 40px;
+        }
+
+
+        .matb3 {
+            background-color: #19B45A;
+            color: white;
+        }
+
+        .matb1,
+        .matb2,
+        .matb4 {
+            background-color: azure;
+            color: lightslategray;
+        }
+
+        .banner {
+            align-content: center;
+            height: 300px !important;
+            background: #3ca55c;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #3ca55c, #b5ac49);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #3ca55c, #b5ac49);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            margin: 0px !important;
+        }
+
+        #ban_title {
+            font-style: italic;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header id="header" class="header header-hide">
+        <div class="container">
+
+            <div id="logo" class="pull-left">
+                <h1><a href="{% url 'home' %}" class="scrollto"><span>SWINDLE </span>SYSTEM</a></h1>
+
+            </div>
+
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+
+                </ul>
+            </nav><!-- #nav-menu-container -->
+        </div>
+    </header><!-- #header -->
+    <div class="banner container-fluid">
+        <center>
+            <br>
+            <br>
+            <br> <br>
+            <br>
+            <br>
+            <h1 id="ban_title">{{str}}</h1>
+        </center>
+    </div>
+    <br>
+
+    <div class="container card">
+        <br>
+
+        <div class="card-title row">
+            <h3 style="margin-left: 25px;"><span style="color: dimgrey;">GENERATED </span>CONFUSION<span style="color: forestgreen;"> MATRIX</span></h3>
+        </div>
+        <br>
+        <div class="row col-md-12">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="row">
+
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 row">
+                        <div class="col-md-6">
+                            <h3 class="text-center">0</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <h3 class="text-center">1</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 row">
+                        <div class="col-md-6">
+                            <p class="text-center" style="font-weight: bold">Valid as Valid</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-center" style="font-weight: bold">Valid as Fraud</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+
+                <div class="row">
+
+                    <div class="mat col-md-2">
+                        <h3 class="text-center">0</h3>
+                    </div>
+                    <div class="matb col-md-8 row">
+                        <div class="mat matb1 col-md-6">
+                            <h3 class="text-center">{{d2}}</h3>
+                        </div>
+                        <div class="mat matb2 col-md-6">
+                            <h3 class="text-center">{{y}}</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                <div class="row">
+                    <div class="mat col-md-2">
+                        <h3 class="text-center">1</h3>
+
+                    </div>
+                    <div class="matb col-md-8 row">
+                        <div class="mat matb3 col-md-6">
+                            <h3 class="text-center">{{q}}</h3>
+                        </div>
+                        <div class="mat matb4 col-md-6">
+                            <h3 class="text-center">{{r}}</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 row">
+                        <div class="col-md-6">
+                            <p class="text-center" style="font-weight: bold">Fraud as Valid</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-center" style="font-weight: bold">Fraud as Fraud</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+
+
+
+    <div class="container">
+        <div class="col-md-12 row">
+            <div class="col-md-6">
+
+                <div class="card">
+                    <div class="card-title">
+                        <br>
+                        <h4 style="margin-left: 25px;"><span style="color: dimgrey;"> Detailed </span>Report on<span style="color: forestgreen;"> {{str}}</span></h4>
+                    </div>
+                    <div class="card-body">
+
+                        <ul>
+                            <li>
+                                In a Dataset of <b>{{ nn }}</b>
+                            </li>
+                            <li>
+                                The Accuracy rate of <b>{{str}}</b> is <b>{{ p1 }}</b> percentage
+                            </li>
+                        </ul>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="card">
+                    <div class="card-title"><br>
+                        <h4 style="margin-left: 25px;">
+                            <span style="color: dimgrey;"> Deatiled </span>Report on<span style="color: forestgreen;"> Dataset </span>
+                        </h4>
+                    </div>
+                    <div class="card-body">
+
+                        <ul>
+
+                            <li>
+                                count in dataset is <b>{{count1}}</b>
+                            </li>
+                            <li>
+                                missing values in dataset is <b>{{mvs}}</b>
+                            </li>
+                            <li>
+                                frauds in dataset is <b>{{fd1}}</b>
+                            </li>
+                            <li>
+                                normal in dataset is <b>{{nm1}}</b>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
